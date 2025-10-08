@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinLoan Pro - Smart Banking Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        dark: '#1e293b',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="font-sans bg-light text-dark">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center">
+                        <i class="fas fa-hand-holding-usd text-white text-lg"></i>
+                    </div>
+                    <span class="text-xl font-bold text-gradient">POF (Proof of Funds)</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-white hover:text-primary transition-colors">Features</a>
+                    <a href="#how-it-works" class="text-white hover:text-primary transition-colors">How It Works</a>
+                    <a href="#pricing" class="text-white hover:text-primary transition-colors">Loan Plans</a>
+                    <a href="#testimonials" class="text-white hover:text-primary transition-colors">Testimonials</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="/auth/signin" class="text-white hover:text-primary transition-colors">Sign In</a>
+                    <a href="/auth/signup" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-xl hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                        Get POF NOW!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-20 hero-gradient relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Instant 
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">Proof Of Funds</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-white/80 leading-relaxed">
+                       Stop worrying about bank statements, unexpected holds, or last-minute funding issues. 
+                       Our service provides you with a professionally managed, fully compliant <b>Proof of Funds account<b> that meets the strict standards of visa authorities around the world.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+                        <a href="/auth/signup" class="bg-white text-primary px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 text-center">
+                            Apply Now - It's Free
+                        </a>
+                        <a href="#pricing" class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-all text-center">
+                            View Loan Plans
+                        </a>
+                    </div>
+                    
+                    <div class="mt-12 flex items-center space-x-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">4.8/5</div>
+                            <div class="text-white/70 text-sm">Customer Rating</div>
+                        </div>
+                        <div class="h-12 w-px bg-white/30"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">24h</div>
+                            <div class="text-white/70 text-sm">Approval Time</div>
+                        </div>
+                        <div class="h-12 w-px bg-white/30"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">₦2B+</div>
+                            <div class="text-white/70 text-sm">POF Disbursed</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="relative z-10 animate-float">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Happy customer with loan approval" 
+                             class="rounded-2xl shadow-2xl">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 w-full h-full bg-gradient-to-r from-primary to-secondary rounded-2xl opacity-20 animate-pulse-slow"></div>
+                    
+                    <!-- Floating elements -->
+                    <div class="absolute -top-4 -right-4 glass-effect p-4 rounded-2xl shadow-lg">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-bolt text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-white">Instant</div>
+                                <div class="text-white/70 text-sm">Approval</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute -bottom-4 -left-4 glass-effect p-4 rounded-2xl shadow-lg">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-white"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-white">Bank</div>
+                                <div class="text-white/70 text-sm">Secure</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Why Choose Us?</h2>
+                <p class="text-xl text-dark/70 max-w-2xl mx-auto">Experience the future of lending with our innovative platform designed for your financial success.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-light p-8 rounded-2xl hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-rocket text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Fully compliant Proof of Funds account</h3>
+                    <p class="text-dark/70">It means that when you present your visa application, you're submitting a document that guarantees compliance and credibility.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-light p-8 rounded-2xl hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-percentage text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Competitive Rates</h3>
+                    <p class="text-dark/70">Enjoy industry-low interest rates starting from 2.4% APR. Save thousands over the life of your loan.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-light p-8 rounded-2xl hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Digital Experience</h3>
+                    <p class="text-dark/70">Complete your entire loan process online. No paperwork, no branch visits, no hassle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">How It Works</h2>
+                <p class="text-xl text-dark/70 max-w-2xl mx-auto">Getting your loan has never been easier. Just three simple steps.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Step 1 -->
+                <div class="text-center relative">
+                    <div class="w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                        1
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Apply Online</h3>
+                    <p class="text-dark/70">Fill out our simple application in just 5 minutes. No credit impact until you accept an offer.</p>
+                    <div class="hidden md:block absolute top-10 left-1/2 w-full h-0.5 bg-primary/30 -z-10"></div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="text-center relative">
+                    <div class="w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                        2
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Open POF account</h3>
+                    <p class="text-dark/70">We get you a fully compliant Proof of Funds account that meets the strict standards of visa authorities around the world.</p>
+                    <div class="hidden md:block absolute top-10 left-1/2 w-full h-0.5 bg-primary/30 -z-10"></div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
+                        3
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Receive Funds</h3>
+                    <p class="text-dark/70">Once approved, funds are deposited directly to your proof of fund bank account as fast as the same day.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="/auth/signup" class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl transition-all inline-block">
+                    Start Your Application
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing/Loan Plans -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Flexible POF RATE</h2>
+                <p class="text-xl text-dark/70 max-w-2xl mx-auto">Choose the perfect loan option for your needs with transparent pricing.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Personal Loan -->
+                <div class="bg-light rounded-2xl p-8 hover:shadow-xl transition-all border-2 border-transparent hover:border-primary/20">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-2">Personal Loan</h3>
+                        <div class="text-4xl font-bold text-primary mb-4">From 2.4% APR</div>
+                        <p class="text-dark/70">Perfect for debt consolidation, home improvements, or major purchases</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Loan amounts: ₦1,000 - ₦100,000</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Terms: 1-7 years</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>No prepayment penalties</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Fixed monthly payments</span>
+                        </div>
+                    </div>
+                    
+                    <a href="/auth/signup?plan=personal" class="block w-full bg-primary text-white text-center py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors">
+                        Apply Now
+                    </a>
+                </div>
+                
+                <!-- Business Loan -->
+                <div class="bg-gradient-to-b from-primary to-secondary rounded-2xl p-8 text-white relative transform scale-105 shadow-2xl">
+                    <div class="absolute top-0 right-0 bg-yellow-500 text-dark px-4 py-1 rounded-bl-2xl rounded-tr-2xl font-semibold text-sm">
+                        MOST POPULAR
+                    </div>
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-2">Business Loan</h3>
+                        <div class="text-4xl font-bold mb-4">From 4.2% APR</div>
+                        <p>Fuel your business growth with flexible funding options</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-white mr-3"></i>
+                            <span>Loan amounts: ₦5,000 - ₦500,000</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-white mr-3"></i>
+                            <span>Terms: 6 months - 5 years</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-white mr-3"></i>
+                            <span>Revenue-based repayment</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-white mr-3"></i>
+                            <span>Dedicated account manager</span>
+                        </div>
+                    </div>
+                    
+                    <a href="/auth/signup?plan=business" class="block w-full bg-white text-primary text-center py-3 rounded-xl font-semibold hover:bg-light transition-colors">
+                        Apply Now
+                    </a>
+                </div>
+                
+                <!-- Mortgage -->
+                <div class="bg-light rounded-2xl p-8 hover:shadow-xl transition-all border-2 border-transparent hover:border-primary/20">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-2">Mortgage</h3>
+                        <div class="text-4xl font-bold text-primary mb-4">From 2.9% APR</div>
+                        <p class="text-dark/70">Make your dream home a reality with our competitive mortgage rates</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Loan amounts: ₦50,000 - ₦2M</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Terms: 15-30 years</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Fixed & adjustable rates</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Online application & tracking</span>
+                        </div>
+                    </div>
+                    
+                    <a href="/auth/signup?plan=mortgage" class="block w-full bg-primary text-white text-center py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors">
+                        Apply Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">What Our Customers Say</h2>
+                <p class="text-xl text-dark/70 max-w-2xl mx-auto">Join thousands of satisfied customers who've achieved their financial goals with FinLoan Pro.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            SJ
+                        </div>
+                        <div>
+                            <div class="font-bold">Sarah Johnson</div>
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-dark/70">"I needed a personal loan quickly to consolidate debt. FinLoan Pro approved me in minutes and I had the funds the same day. The process was incredibly smooth!"</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            MR
+                        </div>
+                        <div>
+                            <div class="font-bold">Michael Rodriguez</div>
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-dark/70">"As a small business owner, getting funding was always a challenge. FinLoan Pro understood my needs and provided a business loan with perfect terms. Highly recommend!"</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            ED
+                        </div>
+                        <div>
+                            <div class="font-bold">Emily Davis</div>
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-dark/70">"The mortgage process was so much easier than I expected. Their team guided me through every step and I got a rate much lower than other lenders offered."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20 hero-gradient text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
+                <p class="text-xl mb-8 text-white/80">Join thousands of customers who have transformed their financial future with FinLoan Pro. Apply now and get a decision in minutes.</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="/auth/signup" class="bg-white text-primary px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl transition-all">
+                        Create Your Account
+                    </a>
+                    <a href="#pricing" class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-all">
+                        Compare Loan Plans
+                    </a>
+                </div>
+                
+                <div class="mt-8 text-white/60 text-sm">
+                    No obligation • No impact on credit score • 100% free application
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center">
+                            <i class="fas fa-hand-holding-usd text-white text-lg"></i>
+                        </div>
+                        <span class="text-xl font-bold">FinLoan Pro</span>
+                    </div>
+                    <p class="text-white/70">Smart banking solutions for your financial future.</p>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold mb-4">Products</h3>
+                    <ul class="space-y-2 text-white/70">
+                        <li><a href="#" class="hover:text-white transition-colors">Personal POF</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Business POF</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Mortgages</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Debt Consolidation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold mb-4">Company</h3>
+                    <ul class="space-y-2 text-white/70">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Press</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold mb-4">Legal</h3>
+                    <ul class="space-y-2 text-white/70">
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Disclosures</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-12 pt-8 text-center text-white/60">
+                <p>&copy; 2025 NEST MFB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white/95', 'shadow-lg');
+                nav.classList.remove('glass-effect');
+            } else {
+                nav.classList.remove('bg-white/95', 'shadow-lg');
+                nav.classList.add('glass-effect');
+            }
+        });
+    </script>
+</body>
+</html>
